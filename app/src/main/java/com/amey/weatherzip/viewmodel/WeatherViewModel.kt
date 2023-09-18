@@ -38,7 +38,7 @@
         fun getWeatherDataFromAPI(selectedZipCode: String): Observable<WeatherResponse>? {
             return Observable.create { emitter ->
                 try {
-                    val apiKey = "9tETGjF2ESvhvQ8hpFKnq2-f305lGB3BvFwI6QG3Q9E"
+                    val apiKey = ""
                     val okHttpClient: OkHttpClient = OkHttpClient.Builder()
                         .addInterceptor { chain ->
                             val original: Request = chain.request()
