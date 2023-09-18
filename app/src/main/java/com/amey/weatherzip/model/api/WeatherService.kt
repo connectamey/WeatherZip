@@ -8,6 +8,7 @@ interface WeatherService {
     @GET("/v3/report")
     fun getWeatherReport(
         @Query("products") products: String,
-        @Query("zipCode") zipCode: String
+        @Query("zipCode") zipCode: String,
+        @Query("apiKey") apiKey: String
     ): Observable<WeatherResponse>
 }
