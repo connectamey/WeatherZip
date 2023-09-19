@@ -6,6 +6,7 @@
     <dist:module dist:instant="true" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:exported="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -19,6 +20,8 @@
             android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
+
             android:theme="@style/Theme.WeatherZip">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -80,7 +80,6 @@ class MainActivity : ComponentActivity() {
             )[WeatherViewModel::class.java]
 
             numberQueue = weatherViewModel.numberQueue
-            weatherDBDao = weatherViewModel.database.weatherDao()
             weatherViewModel.addHardcodedZipCodesInQueue()
 
             WeatherZipTheme {

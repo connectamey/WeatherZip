@@ -25,8 +25,10 @@
     import java.util.Queue
 
     class WeatherViewModel(application: Application ) : AndroidViewModel(application) {
+        val apiKey = ""
         var numberQueue: Queue<String> = LinkedList()
-        val database = Room.databaseBuilder(application.applicationContext, WeatherDatabase::class.java, "weather_db").build()
+        var database = Room.databaseBuilder(application.applicationContext, WeatherDatabase::class.java, "weather_db").build()
+        val recentSearchesDatabase = Room.databaseBuilder(application.applicationContext, WeatherDatabase::class.java, "weather_db_recent_queries").build()
     val weatherData: WeatherData? = null
         var weatherResponse: WeatherResponse? = null
         private val weatherDao = database.weatherDao()
@@ -38,7 +40,7 @@
         fun getWeatherDataFromAPI(selectedZipCode: String): Observable<WeatherResponse>? {
             return Observable.create { emitter ->
                 try {
-                    val apiKey = ""
+
                     val okHttpClient: OkHttpClient = OkHttpClient.Builder()
                         .addInterceptor { chain ->
                             val original: Request = chain.request()
