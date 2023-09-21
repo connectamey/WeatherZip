@@ -62,19 +62,18 @@ android {
 dependencies {
 
 
-    ksp ("com.android.databinding:compiler:3.1.4")
+    ksp("com.android.databinding:compiler:3.1.4")
     ksp("androidx.room:room-compiler:2.5.2")
 
     implementation("androidx.test.ext:junit-ktx:1.1.5")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0-alpha01")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0-alpha01")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("io.reactivex.rxjava2:rxjava:2.2.21")
-    implementation ("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
-    implementation ("io.reactivex.rxjava2:rxandroid:2.1.1")
-    implementation ("androidx.room:room-runtime:2.5.2")
-    implementation ("androidx.room:room-ktx:2.5.2")
-
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("io.reactivex.rxjava2:rxjava:2.2.21")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
+    implementation("androidx.room:room-runtime:2.5.2")
+    implementation("androidx.room:room-ktx:2.5.2")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.airbnb.android:lottie-compose:6.0.1")
     implementation("androidx.compose.ui:ui:1.5.1")
     implementation("androidx.compose.material3:material3:1.2.0-alpha06")
@@ -89,23 +88,23 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.room:room-rxjava2:2.5.2")
 
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
-    testImplementation ("androidx.arch.core:core-testing:2.2.0")
-    testImplementation ("org.mockito.kotlin:mockito-kotlin:5.1.0")
-    testImplementation ("org.robolectric:robolectric:4.10.3")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
+    testImplementation("org.robolectric:robolectric:4.10.3")
     testImplementation("junit:junit:4.13.2")
     testImplementation("androidx.compose.ui:ui-test-junit4")
-    testImplementation ("androidx.compose.ui:ui-test-junit4:1.5.1")
+    testImplementation("androidx.compose.ui:ui-test-junit4:1.5.1")
 
 
 
-    androidTestImplementation ("androidx.compose.ui:ui-test-junit4:1.5.1")
-    androidTestImplementation ("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.5.1")
+    androidTestImplementation("androidx.test:runner:1.5.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    androidTestImplementation ("androidx.compose.ui:ui-test-junit4:1.5.1")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.5.1")
 
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.5.1")

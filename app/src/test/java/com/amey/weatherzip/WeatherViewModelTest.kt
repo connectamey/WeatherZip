@@ -20,6 +20,7 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
+
 @RunWith(RobolectricTestRunner::class)
 class WeatherViewModelTest {
 
@@ -70,17 +71,22 @@ class WeatherViewModelTest {
         val selectedZipCode = "02119"
         val mockWeatherResponse = Mockito.mock(WeatherResponse::class.java)
 
-        Mockito.`when`(weatherService.getWeatherReport("observation", selectedZipCode, viewModel.apiKey))
+        Mockito.`when`(
+            weatherService.getWeatherReport(
+                "observation",
+                selectedZipCode,
+                viewModel.apiKey
+            )
+        )
             .thenReturn(Observable.just(mockWeatherResponse))
 
         val testObserver = viewModel.getWeatherDataFromAPI(selectedZipCode)?.test()
         testScheduler.triggerActions()
 
-        // Assert that the observer received the response
         testObserver?.assertNoErrors()
             ?.assertValueCount(1)
             ?.assertValue { response: WeatherResponse ->
-            response.places[0].observations[0].place.address.city == "Boston"
+                response.places[0].observations[0].place.address.city == "Boston"
 
             }
     }
@@ -91,7 +97,13 @@ class WeatherViewModelTest {
         val selectedZipCode = "94102"
         val mockWeatherResponse = Mockito.mock(WeatherResponse::class.java)
 
-        Mockito.`when`(weatherService.getWeatherReport("observation", selectedZipCode, viewModel.apiKey))
+        Mockito.`when`(
+            weatherService.getWeatherReport(
+                "observation",
+                selectedZipCode,
+                viewModel.apiKey
+            )
+        )
             .thenReturn(Observable.just(mockWeatherResponse))
 
         val testObserver = viewModel.getWeatherDataFromAPI(selectedZipCode)?.test()
@@ -123,11 +135,9 @@ class WeatherViewModelTest {
 
         val testObserver = viewModel.getWeatherDataFromAPI(selectedZipCode)?.test()
         testScheduler.triggerActions()
-
-        // Assert that the observer received the response
         testObserver?.assertNoErrors()
             ?.assertValueCount(0)
 
-            }
-
     }
+
+}
